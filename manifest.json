@@ -1,0 +1,20 @@
+{
+	"manifest_version": 3,
+	"name": "dev env tweak",
+	"version": "1.0",
+	"author": "Vincent Scotto",
+	"description": "dev tweak",
+	"content_scripts": [
+		{
+			"matches": [
+				"*://campaigns.dev.doximity.cloud/*"
+			],
+			"js": [
+				"dev.js"
+			],
+			"css": [
+				"dev.css"
+			]
+		}
+	]
+}
