@@ -46,7 +46,7 @@ if (body.contains(document.getElementById("programs_show"))) {
 
 	*/
 	let sections = document.querySelectorAll(".section");
-	sections[2].style.display = "none";
+	// sections[2].style.display = "none";
 }
 
 // select web checkbox on preview creation
