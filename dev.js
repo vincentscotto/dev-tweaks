@@ -3,6 +3,81 @@ console.log(
 	"color: yellow; font-weight: bold; background-color: blue;padding: 10px;margin: 2px;"
 );
 
+
+
+
+// util: find text and give it a class
+
+function findAndApplyClassByText(textToFind, classNames) {
+	const allElements = document.getElementsByTagName('*');
+	for (let i = 0; i < allElements.length; i++) {
+		const element = allElements[i];
+
+		if (element.textContent.trim() === textToFind) {
+			if (Array.isArray(classNames)) {
+				element.classList.add(...classNames);
+			} else {
+				element.classList.add(classNames);
+			}
+		}
+	}
+}
+/*
+USAGE:
+	single:
+	findAndApplyClassByText('Some Text', 'single-class');
+
+	multiple classes:
+	findAndApplyClassByText('Some Other Text', ['class1', 'class2', 'class3']);
+*/
+
+
+// util: create an element and have it do some things
+
+function createElement(elementType, text, classNames, href, newTab, position, targetElement) {
+	var element = document.createElement(elementType);
+
+	if (text) {
+		element.innerText = text;
+	}
+
+	if (classNames) {
+		if (Array.isArray(classNames)) {
+			element.className = classNames.join(' ');
+		} else {
+			element.className = classNames;
+		}
+	}
+
+	if (elementType === "a" && href) {
+		element.href = href;
+	}
+
+	if (newTab) {
+		element.target = "_blank";
+	}
+
+	if (targetElement && (position === "before" || position === "after")) {
+		if (position === "before") {
+			targetElement.parentNode.insertBefore(element, targetElement);
+		} else {
+			targetElement.parentNode.insertBefore(element, targetElement.nextSibling);
+		}
+	} else {
+		document.body.appendChild(element);
+	}
+
+	return element;
+}
+
+
+
+
+
+
+
+
+
 const body = document.querySelector("body");
 
 // program previews
