@@ -40,6 +40,11 @@ if (body.contains(document.getElementById("programs_show"))) {
 	}
 
 	// hide the waves on the program page
+	/*
+
+		THIS APPEARS TO BE BROKEN BECAUSE THEY SWITCHED SOMETHING
+
+	*/
 	let sections = document.querySelectorAll(".section");
 	sections[2].style.display = "none";
 }
@@ -52,10 +57,10 @@ if (body.contains(document.getElementById("previews_new"))) {
 }
 
 //  hk grotesk
-let divs = document.querySelectorAll("div");
-divs.forEach(function (div) {
-	if (
-		div.contains(document.querySelector(".scope-is-font-family-is-hk-grotesk"))
-	) {
-	}
-});
+// let divs = document.querySelectorAll("div");
+// divs.forEach(function (div) {
+// 	if (
+// 		div.contains(document.querySelector(".scope-is-font-family-is-hk-grotesk"))
+// 	) {
+// 	}
+// });
